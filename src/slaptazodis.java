@@ -73,11 +73,13 @@ public class slaptazodis {
     }
 }
     public static boolean arTuriSkaiciu(String password) {
-        boolean arTuri;
+        boolean arTuri = false;
 
         arTuri = Character.isDigit(password);
         for (int i = 0; i < password.length(); i++){
-
+            if (Character.isDigit(password.charAt(i))) {
+                arTuri = true;
+            }
         }
         return arTuri;
     }
