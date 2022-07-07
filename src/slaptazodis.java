@@ -30,10 +30,10 @@ public class slaptazodis {
         String kiekSimboliu= arDaugiauNegu10Simboliu(password);
         System.out.println("kiek passwordas turi simbolių = " + kiekSimboliu);
 
-        boolean arYraDidzioji = arTuriDidziajaraide(password);
+        boolean arYraDidzioji = arTuriDidziajaraide (password);
         System.out.println("Yra didžioji raide: " + arYraDidzioji);
 
-        boolean arYraMazoji = arTuriMazajaraide(password);
+        boolean arYraMazoji = arTuriMazajaraide (password);
         System.out.println("Yra mažoji raide: " + arYraMazoji);
 
     }
@@ -49,37 +49,43 @@ public class slaptazodis {
         arYra = password.equalsIgnoreCase(pakartotasPassword);
         return arYra;
     }
-    public static String arDaugiauNegu10Simboliu(String password) {
-        if (passwor    public static boolean arTuriSImboli(String email) {
+    public static String arDaugiauNegu10Simboliu (String password) {
+        public static boolean arTuriSImboli (String email) {
+        if (password.length() > 10) {
             boolean arTuri;
             arTuri = email.contains("@") && email.contains(".");
             return arTuri;
-        }d.length() > 10) {
+
             return " daugiau nei 10 simbolių";
         }
         else {
             return "Mažiau nei 10 simbolių";
         }
     }
-    public static boolean  arTuriDidziajaraide(String password) {
+    }
+    public static boolean  arTuriDidziajaraide (String password) {
         boolean arYra;
         arYra = password.toLowerCase().equals(password);
         return arYra;
     }
-    public static boolean  arTuriMazajaraide(String password) {
+    public static boolean  arTuriMazajaraide (String password) {
         boolean arYra;
         arYra = password.toUpperCase().equals(password);
         return arYra;
     }
 }
-    public static boolean arTuriSkaiciu(String password) {
+    }
+    public static boolean arTuriSkaiciu (String password) {
         boolean arTuri;
+        boolean arTuri = false;
 
         arTuri = Character.isDigit(password);
         for (int i = 0; i < password.length(); i++){
 
+            if (Character.isDigit(password.charAt(i))) {
+                arTuri = true;
+            }
         }
         return arTuri;
     }
-}
 }
